@@ -1,6 +1,6 @@
 module EmbedService
 
-go 1.24
+go 1.24.0
 
 require (
 	github.com/aymerick/raymond v2.0.2+incompatible // indirect
