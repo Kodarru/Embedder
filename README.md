@@ -33,6 +33,9 @@ A simple service to create embeds from a URL and display it in a Discord message
 - `image`: The image to be displayed in the embed.
 
 Example URL:
+> [!NOTE]
+> You will not be able to see the embed inside Discord if you are running the service locally. You need to host it on a server that is accessible from the internet.
+
 ```
 http://localhost:8080/?title=Hello%20World&description=This%20is%20a%20test%20embed&url=https://example.com&color=%230099ff&image=https://example.com/image.png
 ```

@@ -58,14 +58,7 @@ func main() {
 			return
 		}
 
-		c.Header("Content-Type", "text/html")
 		c.Data(http.StatusOK, "text/html; charset=utf-8", []byte(result))
-	})
-
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
 	})
 
 	err := r.Run(":8080")
