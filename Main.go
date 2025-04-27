@@ -16,7 +16,7 @@ func main() {
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{{title}}</title>
-		{{large_image}}
+		<meta name="twitter:card" content="{{large_image}}"/>
         <meta name="og:title" content="{{title}}">
 		<meta name="og:description" content="{{description}}">
 		<meta name="og:image" content="{{image}}">
@@ -46,7 +46,7 @@ func main() {
 		}
 
 		if c.Query("large_image") == "true" {
-			ctx["large_image"] = `<meta name="twitter:card" content="summary_large_image"/>`
+			ctx["large_image"] = `summary_large_image`
 		} else {
 			ctx["large_image"] = ""
 		}
