@@ -60,7 +60,7 @@ func main() {
 			return
 		}
 
-		if strings.Contains(c.GetHeader("User-Agent"), "DiscordBot") {
+		if strings.Contains(c.GetHeader("User-Agent"), "Discordbot") {
 			c.Data(http.StatusOK, "text/html; charset=utf-8", []byte(result))
 			return
 		}
