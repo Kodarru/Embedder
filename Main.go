@@ -12,6 +12,7 @@ func main() {
 	<!DOCTYPE html>
 	<html lang="en">
 	<head>
+		<meta name="theme-color" content="#{{color}}">
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{{title}}</title>
@@ -19,8 +20,6 @@ func main() {
 		<meta name="og:description" content="{{description}}">
 		<meta name="og:image" content="{{image}}">
 		<meta name="og:url" content="{{url}}">
-		<meta name="theme-color" content="{{color}}">
-
 	</head>
 	<body>
 		<p>You weren't supposed to see this</p>
