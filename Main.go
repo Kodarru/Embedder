@@ -20,6 +20,7 @@ func main() {
 		<meta name="og:description" content="{{description}}">
 		<meta name="og:image" content="{{image}}">
 		<meta name="og:url" content="{{url}}">
+		{{large_image}}
 	</head>
 	<body>
 		<p>You weren't supposed to see this</p>
@@ -36,9 +37,18 @@ func main() {
 		}
 
 		for key, value := range c.Request.URL.Query() {
+			if key == "large_image" {
+				continue
+			}
 			if len(value) > 0 {
 				ctx[key] = value[0]
 			}
+		}
+
+		if c.Query("large_image") == "true" {
+			ctx["large_image"] = `<meta name="twitter:card" content="summary_large_image"/>`
+		} else {
+			ctx["large_image"] = ""
 		}
 
 		result, err := raymond.Render(HTML, ctx)
