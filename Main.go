@@ -5,6 +5,7 @@ import (
 	"github.com/aymerick/raymond"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"strings"
 )
 
 func main() {
@@ -46,7 +47,7 @@ func main() {
 			}
 		}
 
-		if c.Query("large_image") == "true" {
+		if strings.ToLower(c.Query("large_image")) == "true" {
 			ctx["large_image"] = `summary_large_image`
 		} else {
 			ctx["large_image"] = ""
