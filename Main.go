@@ -60,7 +60,12 @@ func main() {
 			return
 		}
 
-		c.Data(http.StatusOK, "text/html; charset=utf-8", []byte(result))
+		if strings.Contains(c.GetHeader("User-Agent"), "DiscordBot") {
+			c.Data(http.StatusOK, "text/html; charset=utf-8", []byte(result))
+			return
+		}
+
+		c.Redirect(http.StatusFound, ctx["url"])
 	})
 
 	err := r.Run(":8080")
